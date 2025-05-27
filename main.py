@@ -1,8 +1,6 @@
-#importação
 import json
 import os
 
-#Json
 arquivo = 'denuncias.json'
 
 def ler_dados():
@@ -22,7 +20,6 @@ def gerar_novo_id(denuncias):
     ids = [int(d['id']) for d in denuncias]
     return str(max(ids) + 1)
 
-#criar denuncia
 def criar_denuncia():
     titulo = input("Título: ")
     descricao = input("Descrição: ")
@@ -44,7 +41,6 @@ def criar_denuncia():
     salvar_dados(denuncias)
     print("Denúncia criada com ID:", novo_id)
 
-#Lista de denuncias
 def lista_denuncias():
     denuncias = ler_dados()
     if not denuncias:
@@ -53,7 +49,6 @@ def lista_denuncias():
     for d in denuncias:
         print(f"[{d['id']}] {d['titulo']} - {d['status']}")
 
-#Ver denuncia especifica
 def ver_denuncia():
     id = input("ID da denúncia: ")
     denuncias = ler_dados()
@@ -63,7 +58,6 @@ def ver_denuncia():
             return
     print("Denúncia não encontrada")
 
-#Atualizar
 def atualizar_denuncia():
     id = input("ID da denúncia a atualizar: ")
     denuncias = ler_dados()
@@ -107,7 +101,6 @@ def atualizar_denuncia():
             return
     print("Denúncia não encontrada")
 
-#Excluir
 def excluir_denuncia():
     id = input("ID da denúncia a excluir: ")
     denuncias = ler_dados()
@@ -118,7 +111,6 @@ def excluir_denuncia():
         salvar_dados(novas)
         print("Denúncia excluída")
 
-#Menu
 def menu():
     while True:
         print("\nMenu de denúncias")
@@ -146,6 +138,5 @@ def menu():
             case _: 
                 print("Opção inválida")
 
-#Indica onde começa
 if __name__ == '__main__':
     menu()
