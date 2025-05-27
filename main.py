@@ -9,6 +9,9 @@ from database import ler_dados , escrever_dados
 #delegado_adicionar = ler_dados("usuario")
 #delegado_adicionar.append(dictUsuario)
 #escrever_dados(delegado_adicionar, "usuario")
+#lista_usuarios_delegado = ler_dados("usuarios")
+#nova_lista = lista_usuarios_delegado.append(usuarios[id])
+#escrever_dados(nova_lista)
 
 
 usuarios = {[]}
@@ -36,9 +39,6 @@ def delegado_adicionar():
         else:
             nome = input("Digite o nome do usuário: ")
             usuarios[id] = nome
-            lista_usuarios_delegado = ler_dados("usuarios")
-            nova_lista = lista_usuarios_delegado.append(usuarios[id])
-            escrever_dados(nova_lista)
             print(f"Usuário '{nome}' adicionado com sucesso.")
     except ValueError:
         print("ID inválido. Use apenas números.")
