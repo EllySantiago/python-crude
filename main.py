@@ -11,4 +11,5 @@ lista_de_usuarios = ler_dados("usuario")
 lista_de_usuarios.append(dictUsuario)
 escrever_dados(lista_de_usuarios,"usuario")
 
-
+for usuario in lista_de_usuarios:
+    print(usuario)
