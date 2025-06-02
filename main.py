@@ -4,20 +4,11 @@ import os
 from database import ler_dados , escrever_dados
 
 
-#dictUsuario = { }
 
-#delegado_adicionar = ler_dados("usuario")
-#delegado_adicionar.append(dictUsuario)
-#escrever_dados(delegado_adicionar, "usuario")
-#lista_usuarios_delegado = ler_dados("usuarios")
-#nova_lista = lista_usuarios_delegado.append(usuarios[id])
-#escrever_dados(nova_lista)
+usuarios = {}
+senha_geral = "1234"
 
 
-usuarios = {[]}
-senha_geral = "1234567"  #da pra mudar pro mais conveniente
-
-#essa funçao fica responsavel por gerir se a senha geral foi inserida correta ou nao
 def senha():
     tentativas = 3
     while tentativas > 0:
@@ -62,6 +53,20 @@ def lista_de_delegados():
     else:
         print("Nenhum usuário cadastrado.")
 
+def atualizar_delegado():
+    id = input("digite o id de delegado que deseja atualizar:").strip()
+    if id in usuarios:
+        print(f'usuario atual:{usuarios[id]}')
+        novo_nome=input("digite o novo nome de usuario(aperte enter para manter):").strip()
+        if novo_nome:
+            usuarios[id]= novo_nome
+            escrever_dados(usuarios, nome_do_arquivo)
+            print("usuario atualizado com sucesso")
+        else:
+            print("nenhuma alteraçao feita.")
+    else:
+        print("usuario nao encontrado.")
+
 def menu():
     while True:
         print("█" * 50)
@@ -70,7 +75,8 @@ def menu():
         print("1. Adicionar Delegado")
         print("2. Excluir Delegado")
         print("3. Listar Delegados")
-        print("4. Sair")
+        print("4. atualizar delegado")
+        print("5. Sair")
         escolha = input("Escolha uma opção: ")
 
         if escolha == '1':
@@ -80,12 +86,14 @@ def menu():
         elif escolha == '3':
             lista_de_delegados()
         elif escolha == '4':
+            lista_de_delegados()
+        elif escolha == '5':
             print("Saindo do programa.")
             break
         else:
             print("Opção inválida. Tente novamente.")
 
-# Ve se  a senha esta certa  antes do menu
+
 if senha():
     menu()
 
