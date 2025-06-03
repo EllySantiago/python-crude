@@ -111,7 +111,7 @@ def excluir_denuncia():
         salvar_dados(novas)
         print("Denúncia excluída")
 
-def menu():
+def menu_denuncias():
     while True:
         print("\nMenu de denúncias")
         print("1. Criar denúncia")
@@ -139,4 +139,4 @@ def menu():
                 print("Opção inválida")
 
 if __name__ == '__main__':
-    menu()
+    menu_denuncias()
