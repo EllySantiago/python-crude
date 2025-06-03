@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "denuncia_id": "1",
+    "agente_nome": "pedro",
+    "mensagem": "pessimo atendimento",
+    "data": "12-12-2025"
+  },
+  {
+    "id": "2",
+    "denuncia_id": "2",
+    "agente_nome": "Jaime",
+    "mensagem": "me atendeu muito bem, obrigado",
+    "data": "30-12-2025"
+  }
+]
