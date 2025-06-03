@@ -139,14 +139,14 @@ def menu():
         print("1- Criar uma conta \n")
         print("2- Entrar numa conta \n")
         print("3- Sair")
-        opcao = int(input("O que você deseja fazer? \n"))
+        opcao = input("O que você deseja fazer? \n")
     
     
-        if opcao == 1:
+        if opcao == '1':
             criar_usuario (lista_de_usuarios)
-        elif opcao == 2:
+        elif opcao == '2':
             login_usuario (lista_de_usuarios)
-        elif opcao == 3:
+        elif opcao == '3':
             break
         else:
             print("opção inválida!")
