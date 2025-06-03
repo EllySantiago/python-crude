@@ -95,7 +95,7 @@ def excluir_feedback():
         salvar_feedbacks(novas)
         print("✅ Feedback excluído com sucesso!")
 
-def menu():
+def menu_feedback():
     while True:
         print("\nMenu de Feedbacks")
         print("1. Criar feedback")
@@ -121,4 +121,4 @@ def menu():
             print("Opção inválida, tente novamente.")
 
 if __name__ == '__main__':
-    menu()
+    menu_feedback()
