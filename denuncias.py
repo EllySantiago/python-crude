@@ -43,11 +43,12 @@ def criar_denuncia():
 
 def lista_denuncias():
     denuncias = ler_dados()
-    if not denuncias:
-        print("Nenhuma denúncia registrada")
-        return
-    for d in denuncias:
-        print(f"[{d['id']}] {d['titulo']} - {d['status']}")
+    if denuncias:
+        print("Denuncias cadastradas:")
+        for d in denuncias:
+            print(f"[{d['id']}] {d['titulo']} - {d['status']}")
+    else:
+        print("Nenhuma denuncia cadastrada.")
 
 def ver_denuncia():
     id = input("ID da denúncia: ")
@@ -137,6 +138,3 @@ def menu_denuncias():
                 break
             case _: 
                 print("Opção inválida")
-
-if __name__ == '__main__':
-    menu_denuncias()

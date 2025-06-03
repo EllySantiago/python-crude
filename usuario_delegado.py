@@ -38,12 +38,11 @@ def delegado_excluir():
             usuarios.remove(usuario)
             escrever_dados(usuarios, "usuario")
             print(f"Usuário removido com sucesso.")
-        else:
-            print(f"Usuário não encontrado.")
+            return
+    print(f"Usuário não encontrado.")
 
 def lista_de_delegados():
     usuarios = ler_dados("usuario")
-    print(usuarios)
     if usuarios:
         print("\nUsuários cadastrados:")
         for usuario in usuarios:
@@ -53,46 +52,45 @@ def lista_de_delegados():
 
 def atualizar_delegado():
     usuarios = ler_dados("usuario")
-    id = input("digite a matricula/id de delegado que deseja atualizar:")
+    id = int(input("digite a matricula/id de delegado que deseja atualizar:"))
     for index, usuario in enumerate(usuarios):
         if usuario['id'] == id:
-            print(f'usuario atual: {usuario['id']}')
-            novo_id = input("digite a nova matricula/id para o delegado:")
-            novo_nome = input("digite o novo nome")
+            novo_id = int(input("digite a nova matricula/id para o delegado: "))
+            novo_nome = input("digite o novo nome: ")
             usuarios[index] = {"id": novo_id, "nome": novo_nome}
             escrever_dados(usuarios, "usuario")
             print("usuario atualizado com sucesso!")
-            break
+            return
+print("Usuário não encontrado.")
+
 
 
 def menu_de_delegados():
-    while True:
-        print("█" * 50)
-        print("█" * 14 + " SISTEMA DE DENÚNCIAS " + "█" * 14)
-        print("1. Adicionar Delegado")
-        print("2. Excluir Delegado")
-        print("3. Listar Delegados")
-        print("4. atualizar delegado")
-        print("5. Sair")
-        escolha = input("Escolha uma opção: ")
+    if senha():
 
-        if escolha == '1':
-            delegado_adicionar()
-        elif escolha == '2':
-            delegado_excluir()
-        elif escolha == '3':
-            lista_de_delegados()
-        elif escolha == '4':
-           atualizar_delegado()
-        elif escolha == '5':
-            print("Saindo do programa.")
-            break
-        else:
-            print("Opção inválida. Tente novamente.")
+        while True:
+            print("█" * 50)
+            print("█" * 14 + " SISTEMA DE DENÚNCIAS " + "█" * 14)
+            print("1. Adicionar Delegado")
+            print("2. Excluir Delegado")
+            print("3. Listar Delegados")
+            print("4. atualizar delegado")
+            print("5. Sair")
+            escolha = input("Escolha uma opção: ")
 
-
-if senha():
-    menu_de_delegados()
+            if escolha == '1':
+                delegado_adicionar()
+            elif escolha == '2':
+                delegado_excluir()
+            elif escolha == '3':
+                lista_de_delegados()
+            elif escolha == '4':
+               atualizar_delegado()
+            elif escolha == '5':
+                print("Saindo do programa.")
+                break
+            else:
+                print("Opção inválida. Tente novamente.")
 
 
 

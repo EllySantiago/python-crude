@@ -15,7 +15,7 @@ def salvar_feedbacks(feedbacks):
         json.dump(feedbacks, f, indent=2)
 
 def criar_feedback():
-    denuncia_id = input("ID da denúncia: ")
+    denuncia_id = input("ID da denúncia feita na parte de denuncias: ")
     agente_nome = input("Nome do agente: ")
     mensagem = input("Mensagem do feedback: ")
     data = input("Data (ex: 2025-05-23): ")
@@ -83,7 +83,6 @@ def atualizar_feedback():
                 else:
                     print("Opção inválida, tente novamente.")
 
-    print("⚠️ Feedback não encontrado.")
 
 def excluir_feedback():
     id = input("ID do feedback a excluir: ")
@@ -119,6 +118,3 @@ def menu_feedback():
             break
         else:
             print("Opção inválida, tente novamente.")
-
-if __name__ == '__main__':
-    menu_feedback()
