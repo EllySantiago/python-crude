@@ -138,7 +138,7 @@ def menu():
         print("\n--------MENU--------")
         print("1- Criar uma conta \n")
         print("2- Entrar numa conta \n")
-        print("3- Sair")
+        print("3- Sair \n")
         opcao = input("O que você deseja fazer? \n")
     
     
@@ -149,4 +149,4 @@ def menu():
         elif opcao == '3':
             break
         else:
-            print("opção inválida!")
+            print("-----opção inválida!----")
